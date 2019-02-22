@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 /**
- * Generated class for the SinginPage page.
+ * Generated class for the ForgotpasswordPage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
@@ -10,25 +10,16 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 @IonicPage()
 @Component({
-  selector: 'page-singin',
-  templateUrl: 'singin.html',
+  selector: 'page-forgotpassword',
+  templateUrl: 'forgotpassword.html',
 })
-export class SinginPage {
+export class ForgotpasswordPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
-
-  singUp(){
-    this.navCtrl.push('SingupPage');
-  }
-  
-  forgotPassword(){
-    this.navCtrl.push('ForgotpasswordPage')
-  }
-
   ionViewDidLoad() {
-    console.log('ionViewDidLoad SinginPage');
+    console.log('ionViewDidLoad ForgotpasswordPage');
   }
 
 }
