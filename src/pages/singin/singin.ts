@@ -1,0 +1,30 @@
+import { Component } from '@angular/core';
+import { IonicPage, NavController, NavParams } from 'ionic-angular';
+
+/**
+ * Generated class for the SinginPage page.
+ *
+ * See https://ionicframework.com/docs/components/#navigation for more info on
+ * Ionic pages and navigation.
+ */
+
+@IonicPage()
+@Component({
+  selector: 'page-singin',
+  templateUrl: 'singin.html',
+})
+export class SinginPage {
+
+  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  }
+
+
+  singUp(){
+    this.navCtrl.push('SingupPage');
+  }
+
+  ionViewDidLoad() {
+    console.log('ionViewDidLoad SinginPage');
+  }
+
+}
