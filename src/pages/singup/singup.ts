@@ -30,7 +30,7 @@ export class SingupPage {
 
   createAccount() {
     if (this.form.form.valid) {
-      let toast = this.toastCtrl.create({ duration: 3000, position: 'bottom' });
+      let toast = this.toastCtrl.create({ duration: 5000, position: 'bottom' });
 
       this.authService.createUser(this.user)
         .then(reg => {

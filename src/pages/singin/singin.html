@@ -10,24 +10,30 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-  <ion-list>
 
+<ion-content padding>
+    <form #form="ngForm" novalidate>
+  <ion-list>
     <ion-item >
       <ion-label floating>E-mail</ion-label>
-      <ion-input type="text" name="email" required></ion-input>
+      <ion-input type="text" name="email" [(ngModel)]="user.email" #email="ngModel" required></ion-input>
     </ion-item>
-
+    <ion-item *ngIf="email.errors && (email.dirty || email.touched)" color="danger" class="text-danger">
+        O campo é obrigatório
+      </ion-item>
     <ion-item>
       <ion-label floating>Senha</ion-label>
-      <ion-input name="password" type="password" required></ion-input>
+      <ion-input type="password" name="password" [(ngModel)]="user.password" #password="ngModel" required></ion-input>
+    </ion-item>
+  </ion-list>
+  <ion-item *ngIf="password.errors && (password.dirty || password.touched)" class="text-danger">
+      O campo é obrigatório
     </ion-item>
 
-  </ion-list>
-
-  <div padding>
-    <button ion-button color="primary" block>Entrar</button>
-  </div>
+    <button ion-button block color="primary" [disabled]="!form.form.valid" (click)="signIn()">
+        Entrar 
+      </button>
+    </form>
 
   <div padding>
     <button ion-button block clear (click)="forgotPassword()">
@@ -35,7 +41,9 @@
     </button>
 
     <button ion-button block clear (click)="singUp()">
-      Criar Conta
-    </button>
+       Criar minha conta
+      </button>
+
   </div>
+
 </ion-content>

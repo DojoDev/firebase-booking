@@ -19,4 +19,19 @@ export class AuthService{
     createUser(user: UserModel) {
         return this.angularFireAuth.auth.createUserWithEmailAndPassword(user.email, user.password);
       }
+
+    
+
+      signIn(user:UserModel){
+          return this.angularFireAuth.auth.signInWithEmailAndPassword(user.email, user.password);
+      }
+      
+
+      signOut(){
+          return this.angularFireAuth.auth.signOut();
+      }
+
+      forgotPassword(user: UserModel){
+          return this.angularFireAuth.auth.sendPasswordResetEmail(user.email);
+      }
 }
